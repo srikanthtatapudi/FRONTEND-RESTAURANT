@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    //POPULAR ITEMS CAROUSEL (SWIPER.JS)
+// popular items carousel swiper.js
     const swiper = new Swiper('.popular-items-slider', {
         loop: true,
         spaceBetween: 30,
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observeParents: true,
     });
 
-    //VIDEO PLAYER CONTROLS
+// video player controls
     const videoWrapper = document.querySelector('.video-wrapper');
     const promoVideo = document.getElementById('promoVideo');
     if (videoWrapper && promoVideo) {
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         promoVideo.addEventListener('ended', () => videoWrapper.classList.remove('playing'));
     }
 
-    //MODAL FUNCTIONALITY
+// modal functionality
     const requestModal = document.getElementById('requestModal');
     const requestDishBtn = document.getElementById('requestDishBtn');
     const cancelBtn = document.getElementById('cancelBtn');
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
     }
 
-    //FORM SUBMISSION HANDLING (CONTACT & MODAL)
+// form submission handling contact & modal
     const handleFormSubmit = (formSelector, successMessage) => {
         const form = document.querySelector(formSelector);
         if (form) {
@@ -69,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleFormSubmit('.contact-form form', 'Thank you for your message! We will contact you within 48 hours.');
     handleFormSubmit('#requestModal form', 'Thank you for your request! We will review it shortly.');
 
-    //VISUAL FEEDBACK AND QUANTITY SELECTOR LOGIC
+// visual feedback and quantity selector logic
     document.body.addEventListener('click', (e) => {
         if (e.target.matches('.btn-add-cart')) {
             const button = e.target;
@@ -96,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    //SMOOTH SCROLLING FOR NAV LINKS
+// smooth scrolling for nav links
     document.querySelectorAll('.main-nav a[href^="#"], .footer-nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             if (this.getAttribute('href') !== '#') {
