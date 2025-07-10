@@ -62,9 +62,9 @@ The project files are organized in a clean and easy-to-navigate structure:
 
 ==>assets/
 
-  ||==> images/ (Contains all photographic images and illustrations)
+   |==> images/ (Contains all photographic images and illustrations)
 
-  ||==>icons/ (Contains all SVG icons)
+   |==>icons/ (Contains all SVG icons)
 
 ==> index.html (The main HTML file)
 
