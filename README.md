@@ -61,9 +61,16 @@ To view and run this project on your local machine, follow these simple steps:
 The project files are organized in a clean and easy-to-navigate structure:
 
 ==>assets/
+
   ||==> images/ (Contains all photographic images and illustrations)
+
   ||==>icons/ (Contains all SVG icons)
+
 ==> index.html (The main HTML file)
+
 ==> style.css (All custom styles and responsive design)
+
 ==> script.js (All JavaScript for interactivity)
+
 ==> README.md (This file)
+
