@@ -11,17 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
             576: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             992: { slidesPerView: 3 }
-        }
+        },
+        autoHeight: false, 
+        observer: true,
+        observeParents: true,
     });
 
     // --- 2. VIDEO PLAYER CONTROLS ---
     const videoWrapper = document.querySelector('.video-wrapper');
     const promoVideo = document.getElementById('promoVideo');
     if (videoWrapper && promoVideo) {
-        const toggleVideo = () => {
-            if (promoVideo.paused || promoVideo.ended) promoVideo.play();
-            else promoVideo.pause();
-        };
+        const toggleVideo = () => { promoVideo.paused ? promoVideo.play() : promoVideo.pause(); };
         videoWrapper.addEventListener('click', toggleVideo);
         promoVideo.addEventListener('play', () => videoWrapper.classList.add('playing'));
         promoVideo.addEventListener('pause', () => videoWrapper.classList.remove('playing'));
@@ -43,12 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         requestDishBtn.addEventListener('click', openModal);
         cancelBtn.addEventListener('click', closeModal);
-        requestModal.addEventListener('click', (event) => {
-            if (event.target === requestModal) closeModal();
-        });
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') closeModal();
-        });
+        requestModal.addEventListener('click', (event) => { if (event.target === requestModal) closeModal(); });
+        document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
     }
 
     // --- 4. FORM SUBMISSION HANDLING (CONTACT & MODAL) ---
@@ -59,16 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 const inputs = form.querySelectorAll('[required]');
                 let isValid = true;
-                inputs.forEach(input => {
-                    if (!input.value.trim()) isValid = false;
-                });
+                inputs.forEach(input => { if (!input.value.trim()) isValid = false; });
                 if (isValid) {
                     alert(successMessage);
                     form.reset();
-                    if (form.closest('.modal-overlay')) {
-                         form.closest('.modal-overlay').style.display = 'none';
-                         document.body.classList.remove('modal-open');
-                    }
+                    if (form.closest('.modal-overlay')) { form.closest('.modal-overlay').style.display = 'none'; document.body.classList.remove('modal-open'); }
                 } else {
                     alert('Please fill in all required fields.');
                 }
@@ -78,16 +69,46 @@ document.addEventListener('DOMContentLoaded', () => {
     handleFormSubmit('.contact-form form', 'Thank you for your message! We will contact you within 48 hours.');
     handleFormSubmit('#requestModal form', 'Thank you for your request! We will review it shortly.');
 
-    // --- 5. VISUAL FEEDBACK ON ADD TO CART ---
-    document.querySelectorAll('.btn-add-cart, .btn-add-full').forEach(button => {
-        const originalText = button.textContent;
-        button.addEventListener('click', () => {
-            button.textContent = button.classList.contains('btn-add-cart') ? '✓' : 'Added!';
-            button.style.backgroundColor = '#16a866'; // Darker green
+    // --- 5. VISUAL FEEDBACK & QUANTITY SELECTOR LOGIC ---
+    document.body.addEventListener('click', (e) => {
+        if (e.target.matches('.btn-add-cart')) {
+            const button = e.target;
+            const originalText = button.textContent;
+            button.textContent = '✓';
+            button.style.backgroundColor = '#16a866';
             setTimeout(() => {
                 button.textContent = originalText;
-                button.style.backgroundColor = ''; // Revert to CSS color
+                button.style.backgroundColor = '';
             }, 1500);
+        }
+
+        if (e.target.matches('.quantity-btn')) {
+            const button = e.target;
+            const valueSpan = button.parentElement.querySelector('.quantity-value');
+            let currentValue = parseInt(valueSpan.textContent);
+            if (button.classList.contains('plus')) {
+                valueSpan.textContent = currentValue + 1;
+            } else if (button.classList.contains('minus')) {
+                if (currentValue > 1) {
+                    valueSpan.textContent = currentValue - 1;
+                }
+            }
+        }
+    });
+
+    // --- 6. SMOOTH SCROLLING FOR NAV LINKS (UPDATED) ---
+    document.querySelectorAll('.main-nav a[href^="#"], .footer-nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            if (this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
         });
     });
 
