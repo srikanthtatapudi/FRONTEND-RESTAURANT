@@ -55,11 +55,11 @@ To view and run this project on your local machine, follow these simple steps:
     -   Simply double-click the `index.html` file to open it in your default web browser (Chrome, Firefox, Safari).
     -   *Recommended:* For the best experience, use a live server extension (like "Live Server" in VS Code) to serve the files.
 
+
 ## Project Structure
 
 The project files are organized in a clean and easy-to-navigate structure:
-Use code with caution.
-Markdown
+
 ├── assets/
 │ ├── images/ (Contains all photographic images and illustrations)
 │ └── icons/ (Contains all SVG icons)
@@ -67,4 +67,3 @@ Markdown
 ├── style.css (All custom styles and responsive design)
 ├── script.js (All JavaScript for interactivity)
 └── README.md (This file)
-
