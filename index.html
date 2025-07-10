@@ -8,16 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
 </head>
 <body>
-
-    <!-- ======================= Header (ID added for navigation) ======================= -->
     <header class="header" id="home">
         <div class="container header-container">
             <a href="#" class="logo"><img src="assets/icons/logo.svg" alt="JTGeats Logo"></a>
             <nav class="main-nav">
-                <!-- Links updated to point to section IDs -->
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -34,7 +34,7 @@
     </header>
 
     <main>
-        <!-- ======================= Hero Section ======================= -->
+        <!--Hero Section-->
         <section class="hero-section">
             <div class="container hero-container">
                 <div class="hero-text">
@@ -48,7 +48,7 @@
             </div>
         </section>
 
-        <!-- ======================= Home Kitchen Section (ID added for navigation) ======================= -->
+        <!--home kitchen -->
         <section class="home-kitchen-section" id="menu">
             <div class="container">
                 <h2 class="section-title">Home Kitchen</h2>
@@ -65,7 +65,7 @@
             </div>
         </section>
 
-        <!-- ======================= Popular Items Section ======================= -->
+        <!-- popular items -->
         <section class="popular-items-section">
             <div class="container">
                 <h2 class="section-title">Popular Items</h2>
@@ -84,7 +84,7 @@
             </div>
         </section>
 
-        <!-- ======================= Video Section ======================= -->
+        <!-- video-->
         <section class="video-section" id="blog">
             <div class="container">
                 <h2 class="section-title">We are providing best<br>home cooked food delivery service.</h2>
@@ -93,7 +93,7 @@
             </div>
         </section>
 
-        <!-- ======================= Contact Section (ID added for navigation) ======================= -->
+        <!--contact-->
         <section class="contact-section" id="contact">
             <div class="container contact-container">
                 <div class="contact-form">
@@ -106,7 +106,7 @@
         </section>
     </main>
 
-    <!-- ======================= Footer ======================= -->
+    <!--footer-->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -119,16 +119,21 @@
         </div>
     </footer>
     
-    <!-- ======================= Modal (Hidden by default) ======================= -->
+    <!-- modal for form -->
     <div class="modal-overlay" id="requestModal">
         <div class="modal-content">
             <h2 class="modal-title">Request a Dish</h2>
             <p>Don't see your favorite dish? Let us know and we'll try to add it to our menu!</p>
-            <form><input type="text" placeholder="Your Name" required><input type="email" placeholder="Your Email" required><input type="text" placeholder="Dish Name" required><textarea rows="4" placeholder="Any specific details or ingredients you'd like us to know about?"></textarea><div class="modal-actions"><button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button><button type="submit" id="submitRequestBtn" class="btn btn-primary-green">Submit Request</button></div></form>
+            <form><input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Dish Name" required>
+                <textarea rows="4" placeholder="Any specific details or ingredients you'd like us to know about?"></textarea>
+                <div class="modal-actions">
+                    <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" id="submitRequestBtn" class="btn btn-primary-green">Submit Request</button>
+                </div>
+            </form>
         </div>
     </div>  
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

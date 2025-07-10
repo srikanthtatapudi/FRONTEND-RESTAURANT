@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. POPULAR ITEMS CAROUSEL (SWIPER.JS) ---
+    //POPULAR ITEMS CAROUSEL (SWIPER.JS)
     const swiper = new Swiper('.popular-items-slider', {
         loop: true,
         spaceBetween: 30,
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observeParents: true,
     });
 
-    // --- 2. VIDEO PLAYER CONTROLS ---
+    //VIDEO PLAYER CONTROLS
     const videoWrapper = document.querySelector('.video-wrapper');
     const promoVideo = document.getElementById('promoVideo');
     if (videoWrapper && promoVideo) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         promoVideo.addEventListener('ended', () => videoWrapper.classList.remove('playing'));
     }
 
-    // --- 3. MODAL FUNCTIONALITY ---
+    //MODAL FUNCTIONALITY
     const requestModal = document.getElementById('requestModal');
     const requestDishBtn = document.getElementById('requestDishBtn');
     const cancelBtn = document.getElementById('cancelBtn');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
     }
 
-    // --- 4. FORM SUBMISSION HANDLING (CONTACT & MODAL) ---
+    //FORM SUBMISSION HANDLING (CONTACT & MODAL)
     const handleFormSubmit = (formSelector, successMessage) => {
         const form = document.querySelector(formSelector);
         if (form) {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleFormSubmit('.contact-form form', 'Thank you for your message! We will contact you within 48 hours.');
     handleFormSubmit('#requestModal form', 'Thank you for your request! We will review it shortly.');
 
-    // --- 5. VISUAL FEEDBACK & QUANTITY SELECTOR LOGIC ---
+    //VISUAL FEEDBACK AND QUANTITY SELECTOR LOGIC
     document.body.addEventListener('click', (e) => {
         if (e.target.matches('.btn-add-cart')) {
             const button = e.target;
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 6. SMOOTH SCROLLING FOR NAV LINKS (UPDATED) ---
+    //SMOOTH SCROLLING FOR NAV LINKS
     document.querySelectorAll('.main-nav a[href^="#"], .footer-nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             if (this.getAttribute('href') !== '#') {
