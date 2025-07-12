@@ -32,7 +32,7 @@ This project was built adhering strictly to the assignment's technical constrain
 
 -   **HTML5**
 -   **CSS3** (with Flexbox, Grid, and CSS Variables)
--   **Vanilla JavaScript (ES6+)**
+-   **JavaScript (ES6+)**
 -   **Swiper.js** (for the carousel, as allowed)
 
 **No CSS frameworks (like Bootstrap) or JavaScript frameworks (like React, Angular) were used.**
@@ -65,6 +65,7 @@ The project files are organized in a clean and easy-to-navigate structure:
    |==> images/ (Contains all photographic images and illustrations)
 
    |==>icons/ (Contains all SVG icons)
+    |==>videos/ (delivery.video)
 
 ==> index.html (The main HTML file)
 
