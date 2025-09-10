@@ -5,7 +5,7 @@
 
 You can view the live, deployed version of the project here:
 
-**[https://srikanthtatapudi.github.io/22A91A6158-AEC.EDU.IN/]**
+**[https://srikanthtatapudi.github.io/FRONTEND-RESTAURANT/]**
 
 This project is a front-end implementation of a food delivery website, completed as a home assignment for Josh Technology Group (JTG). The goal was to build a pixel-perfect, responsive, and interactive webpage using only vanilla HTML, CSS, and JavaScript, following the provided Figma design.
 
@@ -43,12 +43,12 @@ To view and run this project on your local machine, follow these simple steps:
 
 1.  **Clone the repository:**
 
-    git clone https://github.com/srikanthtatapudi/22A91A6158-AEC.EDU.IN.git
+    git clone https://github.com/srikanthtatapudi/FRONTEND-RESTAURANT.git
 
 
 2.  **Navigate to the project directory:**
 
-    cd 22A91A6158-AEC.EDU.IN
+    cd FRONTEND-RESTAURANT
 
 
 3.  **Open the `index.html` file:**
